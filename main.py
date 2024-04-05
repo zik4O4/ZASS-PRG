@@ -1,6 +1,7 @@
 import eel
 import os
-from engin.features import *
+from moteur.features import *
+
 eel.init("site")
 
 os.system(' start msedge.exe --app="http://localhost:8000/index.html"')
