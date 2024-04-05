@@ -1,0 +1,4 @@
+1-installer la bibliothèque Eel
+    pip install Eel
+2-installer la bibliothèque playsound
+    pip install playsound==1.2.2    
