@@ -6,7 +6,7 @@ from moteur.features import *
 from moteur.commend import *
 
 def startVA():
-    eel.init("SiteTest")
+    eel.init("site")
 
 
 

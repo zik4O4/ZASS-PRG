@@ -93,5 +93,7 @@ def allCommends():
           else:
                print("not run in allcommend ")     
      except :
-      print("errur in allcommend ")     
-   
+      print("errur in allcommend ")
+
+
+takeCommend()
