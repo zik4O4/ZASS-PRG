@@ -2,8 +2,8 @@ import os
 
 import eel
 
-from engine.features import *
-from engine.commend import *
+from moteur.features import *
+from moteur.commend import *
 
 def startVA():
     eel.init("SiteTest")
@@ -12,7 +12,7 @@ def startVA():
 
     os.system(' start msedge.exe --app="http://localhost:8000/index.html"')
 
-    playZikoSound()
+    playSound()
     eel.start('index.html', mode=None, host='localhost', block=True)
 
 startVA()

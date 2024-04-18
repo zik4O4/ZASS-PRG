@@ -10,7 +10,7 @@ def start_ziko():
 # to run the voice assest
 def start_word_detection():
     print("start by word_detection") 
-    from engine.features import word_detection
+    from moteur.features import word_detection
     word_detection() 
 
 if __name__=="__main__":
