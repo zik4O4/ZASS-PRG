@@ -4,7 +4,7 @@ def speak(text):
 #getting details of current voice
     voices = engine.getProperty('voices') 
 #changing index, changes voices.3 for male & 1 for female
-    engine.setProperty('voice', voices[3].id) 
+    engine.setProperty('voice', voices[0].id) 
 # setting up new voice rate
     engine.setProperty('rate', 174)
     engine.say(text)
