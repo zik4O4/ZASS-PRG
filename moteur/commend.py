@@ -96,4 +96,4 @@ def allCommends():
       print("errur in allcommend ")
 
 
-takeCommend()
+
