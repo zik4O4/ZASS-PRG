@@ -5,3 +5,12 @@
 
 3-installer la bibliothèque pyttsx3
     pip install pyttsx3
+
+4-installer la bibliothèque speech recognition
+    pip install SpeechRecognition
+
+5-installer la bibliothèque pywhatkit
+    pip install pywhatkit
+
+6-installer la bibliothèque PyAudio
+    pip install PyAudio   
