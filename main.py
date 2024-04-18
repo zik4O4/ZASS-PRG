@@ -1,9 +1,20 @@
-import eel
 import os
-from moteur.features import *
 
-eel.init("site")
+import eel
 
-os.system(' start msedge.exe --app="http://localhost:8000/index.html"')
-playZASSsound()  
-eel.start('index.html', mode=None, host='localhost', block=True)
+from engine.features import *
+from engine.commend import *
+
+def startVA():
+    eel.init("SiteTest")
+
+
+
+    os.system(' start msedge.exe --app="http://localhost:8000/index.html"')
+
+    playZikoSound()
+    eel.start('index.html', mode=None, host='localhost', block=True)
+
+startVA()
+
+  
