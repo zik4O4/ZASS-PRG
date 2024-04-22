@@ -86,10 +86,26 @@ def allCommends():
           if "open" in text:
                from moteur.features import openCommend
                openCommend(text)
-          elif "on youtube":
+          elif "on youtube" in text:
                from moteur.features import playYoutube
                playYoutube(text)
-          
+          elif "send message" in text or "phone call" in text or "video call" in text:
+            from moteur.features import findContact, whatsApp
+            flag = ""
+            contact_no, name = findContact(text)
+            if(contact_no != 0):
+
+                if "send message" in text:
+                    flag = 'message'
+                    speak("what message to send")
+                    text=takeCommend()
+                    
+                elif "phone call" in text:
+                    flag = 'call'
+                else:
+                    flag = 'video call'
+                    
+                whatsApp(contact_no, text, flag, name)
           else:
                print("not run in allcommend ")     
      except :
