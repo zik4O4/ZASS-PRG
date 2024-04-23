@@ -76,4 +76,3 @@ curs= conn.cursor()
 # curs.execute(query)
 # conn.commit()
 
-# hhhhh
