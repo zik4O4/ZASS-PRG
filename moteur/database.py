@@ -72,7 +72,7 @@ curs= conn.cursor()
 
 ####  Insert Single contacts (Optional)
 
-code = "INSERT INTO contacts (name,mobile_no) VALUES ('mom', '+212624136272')"
-curs.execute(code)
-conn.commit()
+# code = "INSERT INTO contacts (name,mobile_no) VALUES ('mom', '+212624136272')"
+# curs.execute(code)
+# conn.commit()
 
