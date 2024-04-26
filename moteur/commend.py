@@ -18,7 +18,7 @@ def speak(text):
     # la vietess de voix
     engine.setProperty('rate',174)
     engine.say(text)
-    eel.DisplayMessage("ziko "+text)
+    eel.DisplayMessage("ZASS "+text)
     engine.runAndWait()
 
 
