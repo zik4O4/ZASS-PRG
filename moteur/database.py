@@ -13,7 +13,7 @@ curs= conn.cursor()
 # code="CREATE TABLE IF NOT EXISTS web_commend (ID INTEGER PRIMARY KEY,NAME VARCHAR(100),URL VARCHAR(100))"
 # curs.execute(code)
 
-# code="INSERT INTO system_commend (NAME, URL)  VALUES('Control Panel', 'C:\\Users\\ziko\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Command Prompt.exe')"
+# code="INSERT INTO system_commend (NAME, PATH)  VALUES('Camera', 'microsoft.windows.camera:')"
 # curs.execute(code)
 # conn.commit()
 
