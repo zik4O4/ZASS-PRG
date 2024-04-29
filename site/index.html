@@ -1,97 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404</title>
-    
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404</title>
+
+
   <!-- logo -->
   <link rel="shortcut icon" href="assest/img/LOGONA.png" type="image/x-icon">
-  
+
   <!-- bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 
   <!-- bootstrap  icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
- <!-- texllate -->
-    <link rel="stylesheet" href="assest/vendore/texllate/animate.css">
+  <!-- texllate -->
+  <link rel="stylesheet" href="assest/vendore/texllate/animate.css">
 
 </head>
+
 <body>
   <div class="container ">
-       <section id="Oval" class="mb-4">
-       <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-10">
-            <div class="d-flex justify-content-center align-items-center" style="height: 80vh;"> 
-                </div> 
-            </div>
-             <h5 class="text-light text-center startext ">Ask Me Anything</h5>
-<!--  satrt chatbox -->
-            <div class="col-md-12 mt-4 pt-4">
-              <div class="text-center">
-                <div id="TextInput" class="d-flex"> 
-
-                  <input type="text" name="chatbox" id="chatbox"  class="input-field" placeholder="type her ...">
-                  <button id="MicButton" class="glow-on-hover"><i class="fa-solid fa-microphone"></i></button>
-                  <button id="ChatButton" class="glow-on-hover"><i class="fa-brands fa-rocketchat"></i></button>
-                  <button id="SettingsButton" class="glow-on-hover"><i class="fa-solid fa-gear"></i></button>
-                </div>
-              </div>
-            </div>
-<!--  end  chatbox -->
+    <section id="Oval" class="mb-4">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
           </div>
-          <div class="col-md-1"></div>
         </div>
-      </section>
-      <section id="SiriWave" class="mb-4 landing" hidden>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-                 <div>
-                   <p class=" text-start text-light mb-4 zikoMsg">Hello. I m Z.A.S.S</p>
-                   <div id="siri-container"></div>
-                </div> 
-              </div>
+        <h5 class="text-light text-center startext ">Ask Me Anything</h5>
+        <!--  satrt chatbox -->
+        <div class="col-md-12 mt-4 pt-4">
+          <div class="text-center">
+            <div id="TextInput" class="d-flex">
+
+              <input type="text" name="chatbox" id="chatbox" class="input-field" placeholder="type her ...">
+              <button id="sendButton" class="glow-on-hover" hidden><i class="bi bi-send-fill"></i></i></button>
+              <button id="MicButton" class="glow-on-hover"><i class="fa-solid fa-microphone"></i></button>
+              <button id="ChatButton" class="glow-on-hover" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" ><i class="fa-brands fa-rocketchat"></i></button>
+              <button id="SettingsButton" class="glow-on-hover"><i class="fa-solid fa-gear"></i></button>
             </div>
           </div>
         </div>
-
-
-      </section>
-
-
+        <!--  end  chatbox -->
+      </div>
+      <div class="col-md-1"></div>
+  </div>
+  </section>
+  <section id="SiriWave" class="mb-4 landing" hidden>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div>
+              <p class=" text-start text-light mb-4 zikoMsg">Hello. I m Z.A.S.S</p>
+              <div id="siri-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   </div>
 
+   <!-- start offcanvas -->
+   <div class="offcanvas offcanvas-start chat-canvas" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white" id="offcanvasScrollingLabel">Chats</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div id="chat-canvas-body" class="offcanvas-body">
+            <!-- Chatting code here -->
+
+        </div>
+    </div>
+  <!-- end offcanvas -->
 
 
-    <!-- bootstrap -->
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/all.min.js"></script>
 
-    <!-- siri wave  -->
-      <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
 
-     <!-- to fix the jquery erruer -->
-        <script src= 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script src= 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
 
-   <!-- texllate -->
-        <script src="assest/vendore/texllate/jquery.fittext.js"></script>
-        <script src="assest/vendore/texllate/jquery.lettering.js"></script>
-        <script src="assest/vendore/texllate/jquery.textillate.js"></script>
+  <!-- bootstrap -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/all.min.js"></script>
 
-   <!-- my script -->
-     <script src="main.js"></script>
-     <script src="controller.js"></script>
+  <!-- siri wave  -->
+  <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
 
-   <!-- Eel moudel script -->
-     <script type="text/javascript" src="/eel.js"></script>
-     
+  <!-- to fix the jquery erruer -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+
+  <!-- texllate -->
+  <script src="assest/vendore/texllate/jquery.fittext.js"></script>
+  <script src="assest/vendore/texllate/jquery.lettering.js"></script>
+  <script src="assest/vendore/texllate/jquery.textillate.js"></script>
+
+  <!-- my script -->
+  <script src="main.js"></script>
+  <script src="controller.js"></script>
+
+  <!-- Eel moudel script -->
+  <script type="text/javascript" src="/eel.js"></script>
+
 
 </body>
+
 </html>

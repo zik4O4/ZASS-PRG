@@ -78,10 +78,16 @@ def takeCommend():
 
 
 @eel.expose
-def allCommends():
-     try:
+def allCommends(message=1):
+
+     if message==1:
           text=takeCommend()
           print(text)
+     else:
+           text=message
+
+     try:
+          
 
           if "open" in text:
                from moteur.features import openCommend

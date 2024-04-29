@@ -65,10 +65,59 @@ function keyshort(ke) {
 // Attach the keyup event listener to the document
 document.addEventListener('keyup', keyshort);
 
+// to play assisatnt 
+function PlayAssistant(message) {
+
+  if (message != "") {
+
+      $("#Oval").attr("hidden", true);
+      $("#SiriWave").attr("hidden", false);
+      eel.allCommends(message);
+      $("#chatbox").val("")
+      $("#MicButton").attr('hidden', false);
+      $("#sendButton").attr('hidden', true);
+
+  }
+
+}
 
 
+ // toogle fucntion to hide and display mic and send button 
+ function ShowHideButton(message) {
+  if (message.length == 0) {
+      $("#MicButton").attr('hidden', false);
+      $("#sendButton").attr('hidden', true);
+  }
+  else {
+      $("#MicButton").attr('hidden', true);
+      $("#sendButton").attr('hidden', false);
+  }
+}
 
+ // key up event handler on text box
+ $("#chatbox").keyup(function () {
 
+  let message = $("#chatbox").val();
+  ShowHideButton(message)
+
+});
+
+// send button event handler
+$("#sendButton").click(function () {
+
+  let message = $("#chatbox").val()
+  PlayAssistant(message)
+
+});
+
+// enter press event handler on chat box
+$("#chatbox").keypress(function (e) {
+  key = e.which;
+  if (key == 13) {
+      let message = $("#chatbox").val()
+      PlayAssistant(message)
+  }
+});
 
 
 });
