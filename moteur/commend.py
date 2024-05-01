@@ -20,6 +20,7 @@ def speak(text):
     engine.say(text)
     eel.DisplayMessage("ZASS "+text)
     engine.runAndWait()
+    eel.receiverText(text)
 
 
 
@@ -83,8 +84,11 @@ def allCommends(message=1):
      if message==1:
           text=takeCommend()
           print(text)
+          eel.senderText(text)
      else:
            text=message
+           eel.senderText(text)
+
 
      try:
           
@@ -116,6 +120,7 @@ def allCommends(message=1):
                print("not run in allcommend ")     
      except :
       print("errur in allcommend ")
-
-
+ 
+     eel.reception_back()
+ 
 
