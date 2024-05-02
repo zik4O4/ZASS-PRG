@@ -1,5 +1,6 @@
 import os
 from pipes import quote
+import struct
 import subprocess
 import time
 
@@ -7,6 +8,7 @@ import time
 
 from playsound import playsound
 
+import pyaudio
 import pyautogui
 import pywhatkit as kit
 
@@ -91,7 +93,43 @@ def playYoutube(text):
     # Play the video on YouTube
    kit.playonyt(video_name)
 
+def word_detection():
+    porcupine=None
+    paud=None
+    audio_stream=None
+    try:
+       
+        # pre trained keywords    
+        porcupine=porcupine.create(keywords=["alexa","alexa"]) 
+        paud=pyaudio.PyAudio()
+        audio_stream=paud.open(rate=porcupine.sample_rate,channels=1,format=pyaudio.paInt16,input=True,frames_per_buffer=porcupine.frame_length)
+        
+        # loop for streaming
+        while True:
+            keyword=audio_stream.read(porcupine.frame_length)
+            keyword=struct.unpack_from("h"*porcupine.frame_length,keyword)
 
+            # processing keyword comes from mic 
+            keyword_index=porcupine.process(keyword)
+
+            # checking first keyword detetcted for not
+            if keyword_index>=0:
+                print("hotword detected")
+
+                # pressing shorcut key win+j
+                import pyautogui as autogui
+                autogui.keyDown("win")
+                autogui.press("Z")
+                time.sleep(2)
+                autogui.keyUp("win")
+                
+    except:
+        if porcupine is not None:
+            porcupine.delete()
+        if audio_stream is not None:
+            audio_stream.close()
+        if paud is not None:
+            paud.terminate()
 
 # Whatsapp Message Sending
 

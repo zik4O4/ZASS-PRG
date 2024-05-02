@@ -1,8 +1,8 @@
 
 import multiprocessing
-# to start zikoVA
-def start_ziko():
-    print("runing ziko Apk")
+# to start VA
+def start_zass():
+    print("runing zass Apk")
     from main import startVA
     startVA()
 
@@ -14,7 +14,7 @@ def start_word_detection():
     word_detection() 
 
 if __name__=="__main__":
-    p1=multiprocessing.Process(target=start_ziko)    
+    p1=multiprocessing.Process(target=start_zass)    
     p2=multiprocessing.Process(target=start_word_detection)   
     p1.start() 
     p1.start()

@@ -29,6 +29,7 @@ $(document).ready(function () {
              chatBox.innerHTML += `<div class="row justify-content-end mb-4">
              <div class = "width-size">
              <div class="sender_message">${message}</div>
+             </div>
          </div>`; 
      
              // Scroll to the bottom of the chat box
@@ -42,8 +43,8 @@ $(document).ready(function () {
          var chatBox = document.getElementById("chat-canvas-body");
          if (message.trim() !== "") {
              chatBox.innerHTML += `<div class="row justify-content-start mb-4">
-             <div class = "width-size">
-             <div class="receiver_message"><i class="bi bi-robot"></i>${message}</div>
+             <div class = "width-size"  style="display: flex;"><i class="bi bi-robot" id="icon"></i>
+             <div class="receiver_message">${message}</div>
              </div>
          </div>`; 
      
