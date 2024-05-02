@@ -9,6 +9,7 @@ import time
 
 
 def speak(text):
+    text=str(text)
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
 
@@ -117,7 +118,8 @@ def allCommends(message=1):
                     
                 whatsApp(contact_no, text, flag, name)
           else:
-               print("not run in allcommend ")     
+               from moteur.features import chatBot
+               chatBot(text)     
      except :
       print("errur in allcommend ")
  

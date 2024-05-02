@@ -14,3 +14,12 @@
 
 6-installer la bibliothèque PyAudio
     pip install PyAudio   
+    
+
+7-installer la bibliothèque pvporcupine
+ pip install pvporcupine==1.9.5
+
+
+8-installer la bibliothèque hugchat
+ pip install hugchat
+ 

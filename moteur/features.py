@@ -21,6 +21,10 @@ from moteur.database import*
 from moteur.configeration import VOICE_ASSISTANT_NAME
 from moteur.helper import extract_vedio_name, remove_words
 
+
+from hugchat import hugchat
+
+
  # playinag ziko start sound function
 def playSound():
     audio_dir ="site/assest/audio/zass start.mp3"
@@ -197,4 +201,13 @@ def whatsApp(mobile_no, message, flag, name):
     pyautogui.hotkey('enter')
     speak(zass_message)
 
-
+# chat bot 
+def chatBot(text):
+    user_input = text.lower()
+    chatbot = hugchat.ChatBot(cookie_path="moteur\cookies.json")
+    id = chatbot.new_conversation()
+    chatbot.change_conversation(id)
+    response =  chatbot.chat(user_input)
+    print(response)
+    speak(response)
+    return response
