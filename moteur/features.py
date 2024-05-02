@@ -14,6 +14,7 @@ import pywhatkit as kit
 
 import webbrowser
 
+import pvporcupine
 
 from moteur.commend import speak
 from moteur.database import*
@@ -100,8 +101,10 @@ def word_detection():
     try:
        
         # pre trained keywords    
-        porcupine=porcupine.create(keywords=["alexa","alexa"]) 
+        porcupine=pvporcupine.create(keywords=["alexa","alexa"]) 
         paud=pyaudio.PyAudio()
+        
+        # Open an audio stream for recording
         audio_stream=paud.open(rate=porcupine.sample_rate,channels=1,format=pyaudio.paInt16,input=True,frames_per_buffer=porcupine.frame_length)
         
         # loop for streaming
@@ -118,10 +121,10 @@ def word_detection():
 
                 # pressing shorcut key win+j
                 import pyautogui as autogui
-                autogui.keyDown("win")
+                autogui.keyDown("ctrl")
                 autogui.press("Z")
                 time.sleep(2)
-                autogui.keyUp("win")
+                autogui.keyUp("ctrl")
                 
     except:
         if porcupine is not None:
@@ -130,6 +133,7 @@ def word_detection():
             audio_stream.close()
         if paud is not None:
             paud.terminate()
+
 
 # Whatsapp Message Sending
 

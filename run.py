@@ -1,27 +1,33 @@
 
+    # To run Jarvis
 import multiprocessing
-# to start VA
-def start_zass():
-    print("runing zass Apk")
-    from main import startVA
-    startVA()
 
 
-# to run the voice assest
-def start_word_detection():
-    print("start by word_detection") 
-    from moteur.features import word_detection
-    word_detection() 
+def startVA():
+        # Code for process 1
+        print("Process 1 is running.")
+        from main import startVA
+        startVA()
+    
+    # To run hotword
+def listenHotword():
+        # Code for process 2
+        print("Process 2 is running.")
+        from moteur.features import word_detection
+        word_detection()
 
-if __name__=="__main__":
-    p1=multiprocessing.Process(target=start_zass)    
-    p2=multiprocessing.Process(target=start_word_detection)   
-    p1.start() 
-    p1.start()
-    p1.join
 
-    if p2.is_alive():
-        p2.terminate
-        p2.join 
 
-    print("system was stoped")    
+    # Start both processes
+if __name__ == '__main__':
+        p1 = multiprocessing.Process(target=startVA)
+        p2 = multiprocessing.Process(target=listenHotword)
+        p1.start()
+        p2.start()
+        p1.join()
+
+        if p2.is_alive():
+            p2.terminate()
+            p2.join()
+
+        print("system stop")  
