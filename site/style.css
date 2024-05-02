@@ -174,7 +174,7 @@ body{
 
 .receiver_message{
   padding: 8px;
-  border-radius: 0px 15px 0px 23px;
+  border-radius: 10px 10px 0px 10px;
   width: auto;
   color: white;
   background-color: #49505733;
@@ -182,7 +182,7 @@ body{
 
 .sender_message{
   padding: 8px;
-  border-radius:15px 0px 23px 0px;
+  border-radius:10px 10px 0px 10px;
   width: auto;
   color: white;
   background-color: #0045ffab;
@@ -191,9 +191,21 @@ body{
   max-width: 80%;
   width: auto;
 }
+
+#icon{
+  color: #fff;
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px 7px 0px;
+  text-align: center;
+  align-self: flex-end;
+  line-height: 32px;
+}
   /* .landing{
     background-image: url('assest/img/img.jpg');
     background-size: cover;
     min-height: calc(100vh - 88px );
   } */
   /* Input Filed End*/
+

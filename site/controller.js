@@ -43,7 +43,7 @@ $(document).ready(function () {
          if (message.trim() !== "") {
              chatBox.innerHTML += `<div class="row justify-content-start mb-4">
              <div class = "width-size">
-             <div class="receiver_message">${message}</div>
+             <div class="receiver_message"><i class="bi bi-robot"></i>${message}</div>
              </div>
          </div>`; 
      
