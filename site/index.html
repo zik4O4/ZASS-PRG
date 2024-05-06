@@ -41,7 +41,7 @@
               <button id="sendButton" class="glow-on-hover" hidden><i class="bi bi-send-fill"></i></i></button>
               <button id="MicButton" class="glow-on-hover"><i class="fa-solid fa-microphone"></i></button>
               <button id="ChatButton" class="glow-on-hover" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" ><i class="fa-brands fa-rocketchat"></i></button>
-              <button id="SettingsButton" class="glow-on-hover"><i class="fa-solid fa-gear"></i></button>
+              <button id="SettingsButton" class="glow-on-hover" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-gear"></i></button>
             </div>
           </div>
         </div>
@@ -80,6 +80,20 @@
         </div>
     </div>
   <!-- end offcanvas -->
+
+ <!-- start settingscanvas -->
+
+<div class="offcanvas offcanvas-end settings-canvas" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Settings</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    ...
+  </div>
+</div>
+ <!-- start settingscanvas -->
+
 
 
 

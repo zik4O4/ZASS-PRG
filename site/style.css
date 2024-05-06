@@ -156,4 +156,6 @@ body{
     min-height: calc(100vh - 88px );
   } */
   /* Input Filed End*/
-
+  .settings-canvas{
+    background-color: var(--dark_canvas_color);
+  }
