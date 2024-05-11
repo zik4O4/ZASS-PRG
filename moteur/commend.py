@@ -93,7 +93,7 @@ def allCommends(message=1):
 
      try:
           
-
+          text = text.lower()
           if "open" in text:
                from moteur.features import openCommend
                openCommend(text)
