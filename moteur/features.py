@@ -123,7 +123,7 @@ def word_detection():
             if keyword_index>=0:
                 print("hotword detected")
 
-                # pressing shorcut key win+j
+                # pressing shorcut key win+z
                 import pyautogui as autogui
                 autogui.keyDown("ctrl")
                 autogui.press("Z")
