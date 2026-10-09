@@ -1,5 +1,6 @@
 import os
-from pipes import quote
+from shlex import quote
+from pathlib import Path
 import struct
 import subprocess
 import time
@@ -204,7 +205,16 @@ def whatsApp(mobile_no, message, flag, name):
 # chat bot 
 def chatBot(text):
     user_input = text.lower()
-    chatbot = hugchat.ChatBot(cookie_path="moteur\cookies.json")
+    cookie_path_value = os.environ.get("ZASS_COOKIE_PATH")
+    if not cookie_path_value:
+        raise RuntimeError("Set ZASS_COOKIE_PATH to a fresh local cookie file outside Git.")
+    cookie_path = Path(cookie_path_value).expanduser().resolve()
+    legacy_path = (Path(__file__).resolve().parent / "cookies.json").resolve()
+    if cookie_path == legacy_path:
+        raise RuntimeError("The legacy repository cookie file must not be reused.")
+    if not cookie_path.is_file():
+        raise FileNotFoundError("ZASS_COOKIE_PATH must point to an existing local cookie file.")
+    chatbot = hugchat.ChatBot(cookie_path=str(cookie_path))
     id = chatbot.new_conversation()
     chatbot.change_conversation(id)
     response =  chatbot.chat(user_input)
